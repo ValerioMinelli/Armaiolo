@@ -1,0 +1,5 @@
+
+Modifiche da fare per la versione 2:
+
+1. Dare all'utente la possibilità di acquistare una certa quantità di una ogni arma. 
+
