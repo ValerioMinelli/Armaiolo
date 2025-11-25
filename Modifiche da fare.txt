@@ -1,5 +1,5 @@
 
 Modifiche da fare per la versione 2:
 
-1. Dare all'utente la possibilità di acquistare una certa quantità di una ogni arma. 
+1. Dare la possibilità di aggiungere delle modifiche alle armi. 
 
