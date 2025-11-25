@@ -66,7 +66,7 @@ SPAS12 = Arma(prezzo = 1000, modello = 'Spas 12', tipo = 'Fucile a pompa', calib
 # ------------------------------------------------------------------------------------
 
 
-budget = 1
+budget = 10
 
 budget *= 1000
 
