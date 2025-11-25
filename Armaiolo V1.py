@@ -70,6 +70,14 @@ budget *= 1000
 
 miaArmeria = []
 
+
+print('BEVENTUO!')
+print('')
+print('Questo è un programma che gestisce un armaiolo digitale, dove puoi comprare e modificare delle armi custom. ')
+print('')
+print('')
+
+
 repeat = True
 
 while repeat == True:
