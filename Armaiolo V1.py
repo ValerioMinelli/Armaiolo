@@ -95,8 +95,12 @@ while repeat == True:
         print('')
     elif azione == '6':
         addBudget = float(input('Quanti soldi vuoi aggiungere al tuo budget; '))
-        budget += addBudget
-        print('Il tuo budget ora è;', budget, '$')
+        x = isinstance(addBudget, float)
+        if x == True:
+            budget += addBudget
+            print('Il tuo budget ora è;', budget, '$')
+        else:
+            print('Devi inserire un numero per aggiungere dei soldi al tuo budget!')
         print('')
     elif azione == '1':
         # METTERE QUI IL CODICE PER COMPRARE UN ARMA! 
