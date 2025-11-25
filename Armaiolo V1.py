@@ -66,7 +66,7 @@ SPAS12 = Arma(prezzo = 1000, modello = 'Spas 12', tipo = 'Fucile a pompa', calib
 # ------------------------------------------------------------------------------------
 
 
-budget = 100
+budget = 1
 
 budget *= 1000
 
@@ -111,11 +111,14 @@ while repeat == True:
         if x == True:
             print(arma1)
         else:
-            budget -= arma1['Prezzo'] * quantità
-            for n in range(quantità):
-                miaArmeria.append(arma1)
-                print(arma1['Nome'], "è stato aggiunto alla tua armeria! ")
+            if budget >= arma1['Prezzo'] * quantità:
+                budget -= arma1['Prezzo'] * quantità
+                for n in range(quantità):
+                    miaArmeria.append(arma1)
+                print(quantità, arma1['Nome'], "sono stati aggiunti alla tua armeria al costo di", arma1['Prezzo'] * quantità, '$!')
                 print('Il tuo budget ora è', budget)
+            else:
+                print('Non hai abbastanza soldi per comprare tutte queste armi!')
         print('')
     elif azione == '4':
         # METTERE QUI IL CODICE PER MODIFICARE UN ARMA! 
