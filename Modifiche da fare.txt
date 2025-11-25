@@ -2,4 +2,3 @@
 MODIFICHE x VERSIONE 2:
 
 1. Dare all'utente la possibilità di comprare una certa quantità di armi insieme. 
-
