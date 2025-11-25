@@ -56,8 +56,6 @@ def trovaArma(armeria, arma):
         for x, y in i.items():
             if x == 'Nome' and y == arma:
                 return i
-            else:
-                return f"{arma} non trovata!"
 
 
 # definisci le armi qui:
@@ -107,8 +105,8 @@ while repeat == True:
         quantità = int(input('Quante di queste armi vuoi; '))
         print('')
         arma1 = trovaArma(armeria = negozio, arma = armaVoluta)
-        x = isinstance(arma1, str)
-        if x == True:
+        x = isinstance(arma1, dict)
+        if x == False:
             print(arma1)
         else:
             if budget >= arma1['Prezzo'] * quantità:
@@ -116,7 +114,7 @@ while repeat == True:
                 for n in range(quantità):
                     miaArmeria.append(arma1)
                 print(quantità, arma1['Nome'], "sono stati aggiunti alla tua armeria al costo di", arma1['Prezzo'] * quantità, '$!')
-                print('Il tuo budget ora è', budget)
+                print('Il tuo budget ora è di', budget, '$!')
             else:
                 print('Non hai abbastanza soldi per comprare tutte queste armi!')
         print('')
