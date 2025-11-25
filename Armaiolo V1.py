@@ -111,10 +111,11 @@ while repeat == True:
         if x == True:
             print(arma1)
         else:
-            budget -= arma1['Prezzo']
-            miaArmeria.append(arma1)
-            print(arma1['Nome'], "è stato aggiunto alla tua armeria! ")
-            print('Il tuo budget ora è', budget)
+            budget -= arma1['Prezzo'] * quantità
+            for n in range(quantità):
+                miaArmeria.append(arma1)
+                print(arma1['Nome'], "è stato aggiunto alla tua armeria! ")
+                print('Il tuo budget ora è', budget)
         print('')
     elif azione == '4':
         # METTERE QUI IL CODICE PER MODIFICARE UN ARMA! 
