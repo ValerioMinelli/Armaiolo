@@ -1,5 +1,7 @@
 
 Modifiche da fare per la versione 2:
 
-1. Dare la possibilità di aggiungere delle modifiche alle armi. 
+1. Ampliare il catalogo del negozio di armi. 
+
+2. Dare la possibilità di aggiungere delle modifiche alle armi. 
 
