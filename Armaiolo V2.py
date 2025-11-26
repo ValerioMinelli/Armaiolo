@@ -5,7 +5,7 @@ Nome Script: Armaiolo
 Descrizione: Questo script gestisce un negozio che permette di acquistare armi e modificarle. 
 
 Autori: [Valerio]
-Versione: 1.0
+Versione: 2.0
 Data: [24 - 11 - 2025]
 Copyright: © [Valerio] [2025]
 Licenza: [Open Source]
