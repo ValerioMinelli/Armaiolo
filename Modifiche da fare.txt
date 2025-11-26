@@ -4,3 +4,6 @@ Modifiche da fare per la versione 2:
 1. Ampliare il catalogo del negozio di armi. 
 
 2. Dare la possibilità di aggiungere delle modifiche alle armi. 
+
+3. Mettere le armi con caratteristiche identiche in dei gruppi di quantità X dentro l'armeria dell'utente. 
+
