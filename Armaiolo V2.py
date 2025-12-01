@@ -56,6 +56,26 @@ def trovaArma(armeria, arma):
         for x, y in i.items():
             if x == 'Nome' and y == arma:
                 return i
+            
+class nuovaArma():
+    def __init__(self, dettagli, quant, soldi):
+        self.dettagli = dettagli
+        self.quant = quant
+        self.soldi = soldi
+
+    def aggiungiArma(self):
+        self.x = isinstance(self.dettagli, dict)
+        if self.x == False:
+            print(self.dettagli)
+        else:
+            if self.soldi >= self.dettagli['Prezzo'] * self.quant:
+                self.soldi -= self.dettagli['Prezzo'] * self.quant
+                miaArmeria.append({'Quantità':self.quant, 'Dettagli':self.dettagli})
+                print(quantità, arma1['Nome'], "sono stati aggiunti alla tua armeria al costo di", arma1['Prezzo'] * quantità, '$!')
+                print('Il tuo budget ora è di', self.soldi, '$!')
+                return self.soldi
+            else:
+                print('Non hai abbastanza soldi per comprare tutte queste armi!')
 
 
 # definisci le armi qui:
@@ -117,18 +137,8 @@ while repeat == True:
         quantità = int(input('Quante di queste armi vuoi; '))
         print('')
         arma1 = trovaArma(armeria = negozio, arma = armaVoluta)
-        x = isinstance(arma1, dict)
-        if x == False:
-            print(arma1)
-        else:
-            if budget >= arma1['Prezzo'] * quantità:
-                budget -= arma1['Prezzo'] * quantità
-                for n in range(quantità):
-                    miaArmeria.append(arma1)
-                print(quantità, arma1['Nome'], "sono stati aggiunti alla tua armeria al costo di", arma1['Prezzo'] * quantità, '$!')
-                print('Il tuo budget ora è di', budget, '$!')
-            else:
-                print('Non hai abbastanza soldi per comprare tutte queste armi!')
+        addArma = nuovaArma(dettagli = arma1, soldi = budget, quant = quantità)
+        budget = addArma.aggiungiArma()
         print('')
     elif azione == '4':
         # METTERE QUI IL CODICE PER MODIFICARE UN ARMA! 
