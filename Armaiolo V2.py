@@ -19,6 +19,7 @@ def menu():
     print('4 per personalizzare un arma. ')
     print('5 per vedere il tuo budget. ')
     print('6 per aumentare il tuo budget. ')
+    print('7 per testare un arma. ')
     print('"e" per uscire. ')
     print('')
 
@@ -27,15 +28,16 @@ negozio = []
 
 
 class Arma:
-    def __init__(self, modello, calibro, colpi, paese, prezzo, tipo):
+    def __init__(self, modello, calibro, colpi, paese, prezzo, tipo, precisione):
         self.modello = modello
         self.calibro = calibro
         self.colpi = colpi
         self.paese = paese
         self.prezzo = prezzo
         self.tipo = tipo
+        self.precisione = precisione
 
-        self.arma = {'Nome':modello, 'Prezzo':prezzo, 'Tipo':tipo, 'Calibro':calibro, 'Caricatore':colpi, 'Paese':paese}
+        self.arma = {'Nome':modello, 'Prezzo':prezzo, 'Precisione':precisione, 'Tipo':tipo, 'Calibro':calibro, 'Caricatore':colpi, 'Paese':paese}
 
         negozio.append(self.arma)
 
@@ -82,8 +84,8 @@ class nuovaArma():
 
 
 # definisci le armi qui:
-M4 = Arma(prezzo = 700, modello = 'M4', tipo = 'Fucile automatico', calibro = 5.56, colpi = 30, paese = 'U.S.A.')
-SPAS12 = Arma(prezzo = 1000, modello = 'Spas 12', tipo = 'Fucile a pompa', calibro = 12, colpi = 8, paese = 'Italia')
+M4 = Arma(prezzo = 700, modello = 'M4', precisione = 10, tipo = 'fucile automatico', calibro = 5.56, colpi = 30, paese = 'U.S.A.')
+SPAS12 = Arma(prezzo = 1000, modello = 'Spas 12', precisione = 5, tipo = 'fucile a pompa', calibro = 12, colpi = 8, paese = 'Italia')
 # ------------------------------------------------------------------------------------
 
 
@@ -92,6 +94,9 @@ budget = 10
 budget *= 1000
 
 miaArmeria = []
+
+
+modifiche = {'Silenziatore':1, 'Mirino':3, 'Mirino Ottico':6, 'Caricatore Esteso':2}
 
 
 print('BEVENTUO!')
@@ -145,6 +150,16 @@ while repeat == True:
         print('')
     elif azione == '4':
         # METTERE QUI IL CODICE PER MODIFICARE UN ARMA! 
+        arma2 = input('Quale delle tue armi vuoi modificare; ')
+        armaMod = trovaArma(armeria = miaArmeria, arma = arma2)
+        print('')
+        print('Lista delle modifiche disponibili:')
+        for x, y in modifiche.items():
+            print('La modifica', x, 'alza la precisione della tua arma del', y, '%!')
+        print('')
+        mod = input('Che modifica vuoi fare alla tua arma; ')
+        print('')
+        # ***
         print('')
     else:
         print('Non ho riconosciuto il comando, RITENTA!')
