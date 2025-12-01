@@ -35,7 +35,7 @@ class Arma:
         self.prezzo = prezzo
         self.tipo = tipo
 
-        self.arma = {'Nome':modello, 'Prezzo':prezzo, 'Tipo':tipo, 'Calibro':calibro, 'Caricatore':colpi, 'Paese di origine':paese}
+        self.arma = {'Nome':modello, 'Prezzo':prezzo, 'Tipo':tipo, 'Calibro':calibro, 'Caricatore':colpi, 'Paese':paese}
 
         negozio.append(self.arma)
 
@@ -43,12 +43,15 @@ class Arma:
 def printArmeria(armeria, nomeArmeria):
     if len(armeria) > 0:
         n = 0
-        print(nomeArmeria, 'ha queste armi:')
+        print(nomeArmeria, 'contiene queste armi:')
         for i in armeria:
             n += 1
-            print(n, ')', i)
+            if "Quantità" in i:
+                print(n, ')', i['Quantità'], 'x', i['Dettagli'])
+            else:
+                print(n, ')', i)
     else:
-        print(nomeArmeria, 'è vuota!')
+        print(nomeArmeria, 'non contiene armi!')
 
 
 def trovaArma(armeria, arma):
