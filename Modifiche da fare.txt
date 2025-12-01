@@ -5,8 +5,6 @@ Modifiche da fare per la versione 2:
 
 2. Dare la possibilità di aggiungere delle modifiche alle armi. 
 
-3. Mettere le armi con caratteristiche identiche in dei gruppi di quantità X dentro l'armeria dell'utente. 
-
 4. Mettere del codice che permetta di sparare con una delle armi e che usi uno pesudo RNG, influenzato dalle caratteristiche 
     dell'arma, per decidere se colpisci un bersaglio oppure no. 
 
