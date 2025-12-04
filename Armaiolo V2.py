@@ -152,7 +152,7 @@ while repeat == True:
         # METTERE QUI IL CODICE PER MODIFICARE UN ARMA! 
         arma2 = input('Quale delle tue armi vuoi modificare; ')
         armaMod = trovaArma(armeria = miaArmeria, arma = arma2)
-        armaMod['Quantità'] -= 1
+        armaMod['Quantità'] -= 1 # ERRORE 
         print('')
         print('Lista delle modifiche disponibili:')
         for x, y in modifiche.items():
