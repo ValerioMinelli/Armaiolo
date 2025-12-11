@@ -56,13 +56,11 @@ def printArmeria(armeria, nomeArmeria):
         print(nomeArmeria, 'non contiene armi!')
 
 
-def trovaArma(armeria, arma, cerca_in_dettagli=False):
+def trovaArma(armeria, arma, cerca_in_dettagli = False):
     for i in armeria:
-        # Se l'elemento ha 'Dettagli' (è nella mia armeria)
-        if 'Dettagli' in i and cerca_in_dettagli:
+        if 'Dettagli' in i and cerca_in_dettagli == True:
             if i['Dettagli']['Nome'] == arma:
-                return i  # Restituisce l'intero elemento con Quantità e Dettagli
-        # Altrimenti cerca direttamente (negozio)
+                return i 
         else:
             for x, y in i.items():
                 if x == 'Nome' and y == arma:
@@ -102,7 +100,7 @@ budget *= 1000
 miaArmeria = []
 
 
-modifiche = {'Silenziatore':1, 'Mirino':3, 'Mirino Ottico':6, 'Caricatore Esteso':2}
+modifiche = {'Silenziatore':10, 'Mirino':30, 'Mirino Ottico':60, 'Caricatore Esteso':20}
 
 
 print('BENVENUTO!')
