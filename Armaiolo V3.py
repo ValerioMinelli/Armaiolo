@@ -5,7 +5,7 @@ Nome Script: Armaiolo
 Descrizione: Questo script gestisce un negozio che permette di acquistare armi e modificarle. 
 
 Autori: [Valerio]
-Versione: 3.0
+Versione: Alpha 3.0
 Data: [11 - 12 - 2025]
 Copyright: © [Valerio] [2025]
 Licenza: [Open Source]
@@ -56,11 +56,17 @@ def printArmeria(armeria, nomeArmeria):
         print(nomeArmeria, 'non contiene armi!')
 
 
-def trovaArma(armeria, arma):
+def trovaArma(armeria, arma, cerca_in_dettagli=False):
     for i in armeria:
-        for x, y in i.items():
-            if x == 'Nome' and y == arma:
-                return i
+        # Se l'elemento ha 'Dettagli' (è nella mia armeria)
+        if 'Dettagli' in i and cerca_in_dettagli:
+            if i['Dettagli']['Nome'] == arma:
+                return i  # Restituisce l'intero elemento con Quantità e Dettagli
+        # Altrimenti cerca direttamente (negozio)
+        else:
+            for x, y in i.items():
+                if x == 'Nome' and y == arma:
+                    return i
             
 class nuovaArma():
     def __init__(self, dettagli, quant, soldi):
@@ -153,27 +159,34 @@ while repeat == True:
     elif azione == '4':
         # METTERE QUI IL CODICE PER MODIFICARE UN ARMA! 
         arma2 = input('Quale delle tue armi vuoi modificare; ')
-        armaMod = trovaArma(armeria = miaArmeria, arma = arma2)
-        armaMod['Quantità'] -= 1 # ERRORE 
-        print('')
-        print('Lista delle modifiche disponibili:')
-        for x, y in modifiche.items():
-            print('La modifica', x, 'alza la precisione della tua arma del', y, '%!')
-        print('')
-        mod = input('Che modifica vuoi fare alla tua arma; ')
-        print('')
-        trovato = False
-        for x, y in modifiche.items():
-            if x == mod:
-                armaMod['Dettagli']['Precisione'] += y
-                if 'Modifiche' not in armaMod:
-                    armaMod['Modifiche'] = []
-                armaMod['Modifiche'].append(mod)
-                print(f"Modifica '{mod}' applicata con successo!")
-                trovato = True
-                break
-        if not trovato:
-            print("Modifica non trovata!")
+        armaMod = trovaArma(armeria = miaArmeria, arma = arma2, cerca_in_dettagli=True)
+        
+        if armaMod is None:
+            print("Arma non trovata nella tua armeria!")
+        elif armaMod['Quantità'] < 1:
+            print("Non hai questa arma in magazzino!")
+        else:
+            armaMod['Quantità'] -= 1  # Scala la quantità
+            print(f"Hai prelevato 1 {arma2} dalla tua armeria. Ne restano {armaMod['Quantità']}.")
+            print('')
+            print('Lista delle modifiche disponibili:')
+            for x, y in modifiche.items():
+                print('La modifica', x, 'alza la precisione della tua arma del', y, '%!')
+            print('')
+            mod = input('Che modifica vuoi fare alla tua arma; ')
+            print('')
+            trovato = False
+            for x, y in modifiche.items():
+                if x == mod:
+                    armaMod['Dettagli']['Precisione'] += y
+                    if 'Modifiche' not in armaMod:
+                        armaMod['Modifiche'] = []
+                    armaMod['Modifiche'].append(mod)
+                    print(f"Modifica '{mod}' applicata con successo!")
+                    trovato = True
+                    break
+            if not trovato:
+                print("Modifica non trovata!")
         print('')
     else:
         print('Non ho riconosciuto il comando, RITENTA!')
