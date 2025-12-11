@@ -1,10 +1,6 @@
 
 Modifiche da fare per la versione 2:
 
-1. Ampliare il catalogo del negozio di armi. 
-
-2. Dare la possibilità di aggiungere delle modifiche alle armi. 
-
-3. Mettere del codice che permetta di sparare con una delle armi e che usi uno pesudo RNG, influenzato dalle caratteristiche 
+1. Mettere del codice che permetta di sparare con una delle armi e che usi uno pesudo RNG, influenzato dalle caratteristiche 
     dell'arma, per decidere se colpisci un bersaglio oppure no. 
 
