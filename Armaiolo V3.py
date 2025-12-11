@@ -6,7 +6,7 @@ Descrizione: Questo script gestisce un negozio che permette di acquistare armi e
 
 Autori: [Valerio]
 Versione: Alpha 3.0
-Data: [11 - 12 - 2025]
+Data: [11 / 12 / 2025]
 Copyright: © [Valerio] [2025]
 Licenza: [Open Source]
 '''
