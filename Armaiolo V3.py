@@ -11,6 +11,21 @@ Copyright: © [Valerio] [2025]
 Licenza: [Open Source]
 '''
 
+# VARIABILI GLOBALI: ----------------------------------------------------------------------------------------------
+negozio = []
+
+budget = 10
+
+budget *= 1000
+
+miaArmeria = []
+
+modifiche = {'Silenziatore':10, 'Mirino':30, 'Mirino Ottico':60, 'Caricatore Esteso':20}
+
+repeat = True
+
+
+# FUNZIONI: ----------------------------------------------------------------------------------------------
 def menu():
     print('DIGITA:')
     print('1 per acquistare delle armi. ')
@@ -22,24 +37,6 @@ def menu():
     print('7 per testare un arma. ')
     print('"e" per uscire. ')
     print('')
-
-
-negozio = []
-
-
-class Arma:
-    def __init__(self, modello, calibro, colpi, paese, prezzo, tipo, precisione):
-        self.modello = modello
-        self.calibro = calibro
-        self.colpi = colpi
-        self.paese = paese
-        self.prezzo = prezzo
-        self.tipo = tipo
-        self.precisione = precisione
-
-        self.arma = {'Nome':modello, 'Prezzo':prezzo, 'Precisione':precisione, 'Tipo':tipo, 'Calibro':calibro, 'Caricatore':colpi, 'Paese':paese}
-
-        negozio.append(self.arma)
 
 
 def printArmeria(armeria, nomeArmeria):
@@ -65,6 +62,24 @@ def trovaArma(armeria, arma, cerca_in_dettagli = False):
             for x, y in i.items():
                 if x == 'Nome' and y == arma:
                     return i
+
+
+# CLASSI: ----------------------------------------------------------------------------------------------------------------
+
+class Arma:
+    def __init__(self, modello, calibro, colpi, paese, prezzo, tipo, precisione):
+        self.modello = modello
+        self.calibro = calibro
+        self.colpi = colpi
+        self.paese = paese
+        self.prezzo = prezzo
+        self.tipo = tipo
+        self.precisione = precisione
+
+        self.arma = {'Nome':modello, 'Prezzo':prezzo, 'Precisione':precisione, 'Tipo':tipo, 'Calibro':calibro, 'Caricatore':colpi, 'Paese':paese}
+
+        negozio.append(self.arma)
+
             
 class nuovaArma():
     def __init__(self, dettagli, quant, soldi):
@@ -93,24 +108,12 @@ SPAS12 = Arma(prezzo = 1000, modello = 'Spas 12', precisione = 5, tipo = 'fucile
 # ------------------------------------------------------------------------------------
 
 
-budget = 10
-
-budget *= 1000
-
-miaArmeria = []
-
-
-modifiche = {'Silenziatore':10, 'Mirino':30, 'Mirino Ottico':60, 'Caricatore Esteso':20}
-
-
 print('BENVENUTO!')
 print('')
 print('Questo è un programma che gestisce un armaiolo digitale, dove puoi comprare e modificare delle armi custom. ')
 print('')
 print('')
 
-
-repeat = True
 
 while repeat == True:
     menu()
